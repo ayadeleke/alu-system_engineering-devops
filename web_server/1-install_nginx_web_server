@@ -3,18 +3,9 @@
 # listening on port 80
 # querying Nginx at its root / with a GET request 
 
-apt-get update
-apt-get install -y nginx
+apt-get -y update
+apt-get -y install nginx
 
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Holberton School" > /etc/nginx/html/index.html
-printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.html;
-}
-" > /etc/nginx/sites-available/default
-
+ufw allow  'Nginx HTTP' #nginx should be listed on port 80
+echo 'Holberton School' > /var/www/html/index.nginx-debian.html
 service nginx restart
