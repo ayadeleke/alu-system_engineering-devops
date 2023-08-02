@@ -6,7 +6,7 @@ apt-get -y update
 apt-get -y install nginx
 ufw allow  'Nginx HTTP' #nginx should be listed on port 80
 echo 'Holberton School' > /etc/nginx/html/index.html
-echo "Ceci n'est pas une page" > /etc/nginx/html/error_404.html
+echo "Ceci n'est pas une page" > /etc/nginx/html/error404.html
 printf %s "server {
     listen 80;
     listen [::]:80 default_server;
@@ -17,8 +17,8 @@ printf %s "server {
         return 301 https://treasureglobalconcept.com.ng/;
     }
 
-    error_page 404 /error_404.html;
-    location /error_404 {
+    error_page 404 /error404.html;
+    location /error404 {
       root /etc/nginx/html;
       internal;
     }
