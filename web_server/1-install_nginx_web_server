@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Bash script that configures a new Ubuntu machine nginx
+# Bash script that configures a new Ubuntu machine nginx
 
 apt-get -y update
 apt-get -y install nginx
