@@ -5,5 +5,5 @@ apt-get -y update
 apt-get -y install nginx
 ufw allow  'Nginx HTTP'
 echo "Holberton School" > /var/www/html/index.html
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://treasureglobalconcept.com.ng/ permanent;' /etc/nginx/sites-available/default 
+sed -i '/^\tserver_name.*/a return 301 https://www.treasureglobalconcept.com.ng/;' /etc/nginx/sites-available/default 
 service nginx restart
